@@ -17,8 +17,8 @@ def system_busy():
     server_Loadaverage = str(getloadavg())
     if load_1 / psutil.cpu_count() >= threshold:
         HOST_NAME = gethostname()
-        FROM = "hostdimetestmail@gmail.com"
-        MY_PASSWORD = "Test@123456"
+        FROM = "demomail@gmail.com"
+        MY_PASSWORD = "demopassword"
         TO = "sibin.j@hostdime.in"
         SUBJECT = "server cpu overloaded"
         print "server is having high cpu load"
@@ -28,7 +28,7 @@ def system_busy():
         TEXT = HOST_NAME + '\n' + "cpu overloaded" + '\n' + "Current load is: " + '\n' + server_Loadaverage + '\n' + "memory status is: "+ '\n' + memory_stat() + '\n' + "Disk status is: " + '\n' + current_diskusage
         message = """\
         From: %s  
-        
+     
         Subject: %s
         
         %s
@@ -59,7 +59,6 @@ def getDiskSpace():
         line = p.readline()
         if i==2:
             return(line.split()[1:5])
-
 
 disk_Stat = getDiskSpace()
 disk_Total, disk_Used, disk_Free = disk_Stat[0], disk_Stat[1], disk_Stat[2]
