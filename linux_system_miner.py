@@ -28,6 +28,8 @@ with open('/proc/cpuinfo') as f:
                     print("Operating system architecture: " + '64-bit')
                 else:
                     print("Operating system architecture: " + '32-bit')
+                break;
+
 
 """
 /proc/cpuinfo as a Python dict
@@ -144,7 +146,7 @@ if __name__=='__main__':
     detect_devs()
 
     cpuinfo = cpuinfo()
-    for processor in cpuinfo.keys():
-        print(cpuinfo[processor]['model name'])
+    print("Cpu model is: " + cpuinfo['proc0']['model name'])
+
 
     getusers()
