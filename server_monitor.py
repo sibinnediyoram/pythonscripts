@@ -29,13 +29,16 @@ def system_busy():
     from os import getloadavg
     import smtplib
     from socket import gethostname
+    import platform
     import string
     server = smtplib.SMTP('smtp.gmail.com', 587)
     threshold = float(0.2)
     load_1, load_5, load_15 = getloadavg()
     server_Loadaverage = str(getloadavg())
     if load_1 / psutil.cpu_count() >= threshold:
+        OS_VERSION = platform.linux_distribution()[0] + ' ' + platform.linux_distribution()[1]
         HOST_NAME = gethostname()
+        OS_ARCH = platform.architecture()[0]
         FROM = "demomail@gmail.com"
         MY_PASSWORD = "demopassword"
         TO = "sibin.j@hostdime.in"
@@ -44,7 +47,7 @@ def system_busy():
         # Next, log in to the mail server
 
         # Send the mail
-        TEXT = HOST_NAME + '\n' + "cpu overloaded" + '\n' + "Current load is: " + '\n' + server_Loadaverage + '\n' + "memory status is: "+ '\n' + memory_stat() + '\n' + "Disk status is: " + '\n' + current_diskusage
+        TEXT = HOST_NAME + OS_VERSION + OS_ARCH + '\n' + "cpu overloaded" + '\n' + "Current load is: " + '\n' + server_Loadaverage + '\n' + "memory status is: "+ '\n' + memory_stat() + '\n' + "Disk status is: " + '\n' + current_diskusage
         message = """\
         From: %s  
      
