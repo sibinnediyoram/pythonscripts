@@ -1,3 +1,6 @@
+# A python script to mine OS and system details in a Linux Servers
+# Formatted and updated by Sibin John
+
 from __future__ import print_function
 from collections import OrderedDict
 from collections import namedtuple
@@ -149,4 +152,4 @@ if __name__=='__main__':
     print("Cpu model is: " + cpuinfo['proc0']['model name'])
 
 
-    getusers()
+getusers()
