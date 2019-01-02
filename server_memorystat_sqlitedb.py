@@ -1,3 +1,6 @@
+# A simple python script to update memory statistics in Linux machine to a sqlite3 DB
+# Written by Sibin John
+# Date: 25th July 2018
 #!/usr/local/bin/python
 import distro
 import os
