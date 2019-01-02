@@ -1,3 +1,7 @@
+# Server monitoring script to check CPU load average and to send mail with memory statistics, disk space details, and server load
+# at the time of reaching the threshold value
+#Written by : Sibin John
+#Date: November 26th, 2018
 import psutil
 from os import popen
 
