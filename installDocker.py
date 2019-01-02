@@ -1,3 +1,7 @@
+# A simple python script to install Docker in Centos servers
+# Written by Sibin John
+# Date : 2nd Novemebr 2018
+
 import subprocess
 import os
 
